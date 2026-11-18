@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudra NLP | Multilingual Bharatanatyam Mudra Classification</title>
+
+    <!-- Google Fonts for English and Indian Scripts (Kannada, Tamil, Telugu, Malayalam, Devanagari) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Noto+Sans+Kannada:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <div class="logo">
+        <span class="logo-lotus">🪷</span>
+        <div class="logo-text">
+            <span class="brand-name">MudraNLP</span>
+            <span class="brand-tag">Bharatanatyam AI</span>
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li><a href="#predict"><i class="fa-solid fa-brain"></i> Predict Mudra</a></li>
+            <li><a href="#catalog"><i class="fa-solid fa-book-open"></i> Mudra Library</a></li>
+            <li><a href="#about"><i class="fa-solid fa-om"></i> Abhinaya Darpana</a></li>
+            <li><a href="#languages"><i class="fa-solid fa-language"></i> 6 Languages</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero" id="home">
+    <div class="hero-left">
+        <div class="hero-badge">
+            <i class="fa-solid fa-hands-praying"></i> Classical Indian Dance AI
+        </div>
+        <h1>
+            Multilingual
+            <span>Bharatanatyam Mudra</span>
+            Classification & Explanation
+        </h1>
+        <p>
+            Describe any Bharatanatyam Hand Gesture (Hasta Mudra) in your own language. 
+            Our NLP engine predicts the exact mudra with real-time explanations, philosophical meaning (Viniyoga), hand formation steps, and Sanskrit shlokas in 
+            <strong>English, Kannada (ಕನ್ನಡ), Tamil (தமிழ்), Telugu (తెలుగు), Malayalam (മലയാളം), and Hindi (हिन्दी)</strong>.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#predict" class="btn btn-primary" id="startBtn">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Start Prediction
+            </a>
+            <a href="#catalog" class="btn btn-secondary">
+                <i class="fa-solid fa-compass"></i> Explore Mudra Library
+            </a>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">35+</span>
+                <span class="stat-label">Classical Mudras</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number">6</span>
+                <span class="stat-label">Indian Languages</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number">STT & TTS</span>
+                <span class="stat-label">Voice & Audio Speech</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Client-Side NLP</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero-right">
+        <div class="hero-showcase-card">
+            <div class="hero-glow"></div>
+            <div class="hero-art-box">
+                <svg viewBox="0 0 220 280" class="hero-svg-illustration" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="heroSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fad09e"/>
+                            <stop offset="50%" stop-color="#e8a867"/>
+                            <stop offset="100%" stop-color="#cb8242"/>
+                        </linearGradient>
+                        <linearGradient id="heroGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFF59D"/>
+                            <stop offset="50%" stop-color="#FFD700"/>
+                            <stop offset="100%" stop-color="#C59B27"/>
+                        </linearGradient>
+                        <filter id="heroShadow" x="-10%" y="-10%" width="130%" height="130%">
+                            <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.45"/>
+                        </filter>
+                    </defs>
+                    <g filter="url(#heroShadow)">
+                        <!-- Arm & Golden Bangles -->
+                        <rect x="75" y="210" width="70" height="70" fill="url(#heroSkin)" rx="10"/>
+                        <rect x="66" y="198" width="88" height="13" fill="url(#heroGold)" rx="4"/>
+                        <rect x="70" y="215" width="80" height="7" fill="url(#heroGold)" rx="3"/>
+                        <!-- Palm -->
+                        <path d="M 72 205 Q 65 145 80 120 L 145 120 Q 155 155 148 205 Z" fill="url(#heroSkin)"/>
+                        <!-- Alta Center Red Circle -->
+                        <circle cx="112" cy="155" r="16" fill="#C41E3A" opacity="0.9"/>
+                        <!-- Fingers (Pataka / Dance Pose) -->
+                        <rect x="73" y="55" width="16" height="75" rx="8" fill="url(#heroSkin)"/>
+                        <rect x="73" y="55" width="16" height="22" rx="8" fill="#C41E3A"/>
+                        <rect x="91" y="35" width="17" height="92" rx="8" fill="url(#heroSkin)"/>
+                        <rect x="91" y="35" width="17" height="25" rx="8" fill="#C41E3A"/>
+                        <rect x="110" y="25" width="18" height="102" rx="9" fill="url(#heroSkin)"/>
+                        <rect x="110" y="25" width="18" height="26" rx="9" fill="#C41E3A"/>
+                        <rect x="130" y="40" width="17" height="88" rx="8" fill="url(#heroSkin)"/>
+                        <rect x="130" y="40" width="17" height="24" rx="8" fill="#C41E3A"/>
+                        <path d="M 68 180 Q 55 150 72 135 Q 85 135 84 165 Z" fill="url(#heroSkin)"/>
+                        <circle cx="68" cy="148" r="8" fill="#C41E3A"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="hero-caption">
+                <span class="badge-accent">Abhinaya Darpana</span>
+                <h3>हस्तेन सूचयन्नर्थं दृष्ट्या भावं प्रदर्शयेत्</h3>
+                <p>"Where the hand goes, eyes follow; where eyes go, mind follows; where mind goes, emotion is born."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= PREDICTION SECTION ================= -->
+<section class="predict-section" id="predict">
+    <div class="section-heading">
+        <span class="section-tag"><i class="fa-solid fa-microchip"></i> Multilingual NLP Predictor</span>
+        <h2>Describe & Predict Bharatanatyam Mudra</h2>
+        <p>Select your language, describe the hand finger arrangement or symbolism, and discover the exact classical Hasta.</p>
+    </div>
+
+    <div class="predict-card">
+        <div class="predict-card-header">
+            <div class="field-group">
+                <label for="language"><i class="fa-solid fa-globe"></i> Select Language</label>
+                <select id="language">
+                    <option value="English">English</option>
+                    <option value="Kannada">ಕನ್ನಡ (Kannada)</option>
+                    <option value="Tamil">தமிழ் (Tamil)</option>
+                    <option value="Telugu">తెలుగు (Telugu)</option>
+                    <option value="Malayalam">മലയാളം (Malayalam)</option>
+                    <option value="Hindi">हिन्दी (Hindi)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="field-group">
+            <label for="description"><i class="fa-solid fa-pen-nib"></i> Describe Mudra (in English or Any Indian Language)</label>
+            <div class="textarea-wrapper">
+                <textarea
+                    id="description"
+                    placeholder="Example: Flat palm with all fingers straight together, or peacock gesture, or ring finger bent..."
+                    rows="4"
+                ></textarea>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="buttons">
+            <button id="voiceBtn" class="btn btn-voice" type="button" title="Speak your mudra description">
+                <i class="fa-solid fa-microphone"></i> Voice
+            </button>
+            <button id="predictBtn" class="btn btn-predict" type="button">
+                <i class="fa-solid fa-brain"></i> Predict Mudra
+            </button>
+            <button id="randomBtn" class="btn btn-random" type="button" title="Try a random mudra">
+                <i class="fa-solid fa-dice"></i> Random Mudra
+            </button>
+            <button id="clearBtn" class="btn btn-clear" type="button" title="Clear text">
+                <i class="fa-solid fa-eraser"></i> Clear
+            </button>
+        </div>
+
+        <!-- Quick Test Chips -->
+        <div class="quick-examples">
+            <span class="quick-title"><i class="fa-solid fa-lightbulb"></i> Try Quick Examples:</span>
+            <div id="exampleChips" class="example-chips-container">
+                <!-- Chips dynamically injected by app.js based on language -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= RESULT SECTION ================= -->
+<section class="result-section" id="result">
+    <div class="section-heading">
+        <span class="section-tag"><i class="fa-solid fa-award"></i> Prediction Output</span>
+        <h2>Mudra Analysis & Multilingual Explanation</h2>
+        <p>Switch between English, Kannada, Tamil, Telugu, Malayalam, and Hindi to read or listen to the full explanation.</p>
+    </div>
+
+    <div class="result-card">
+        <!-- Language Switcher Bar directly inside Result Card for Instant Re-translation -->
+        <div class="result-lang-bar">
+            <span class="lang-bar-label"><i class="fa-solid fa-language"></i> View Explanation In:</span>
+            <div class="lang-tabs">
+                <button type="button" class="lang-tab-btn active" data-lang="en">English</button>
+                <button type="button" class="lang-tab-btn" data-lang="kn">ಕನ್ನಡ</button>
+                <button type="button" class="lang-tab-btn" data-lang="ta">தமிழ்</button>
+                <button type="button" class="lang-tab-btn" data-lang="te">తెలుగు</button>
+                <button type="button" class="lang-tab-btn" data-lang="ml">മലയാളം</button>
+                <button type="button" class="lang-tab-btn" data-lang="hi">हिन्दी</button>
+            </div>
+        </div>
+
+        <div class="result-grid">
+            <!-- Left Column: Visual Art & Confidence -->
+            <div class="result-visual-col">
+                <div id="mudraVisualContainer" class="mudra-art-box">
+                    <!-- SVG dynamically rendered by app.js -->
+                </div>
+
+                <div class="confidence-box">
+                    <div class="confidence-header">
+                        <span id="confidenceText">Confidence : 97%</span>
+                    </div>
+                    <div class="progress">
+                        <div id="progressBar"></div>
+                    </div>
+                </div>
+
+                <!-- Matched Keyword Badges -->
+                <div id="matchedTerms" class="matched-keywords-box"></div>
+            </div>
+
+            <!-- Right Column: Multilingual Details -->
+            <div class="result-details-col">
+                <div class="result-header-row">
+                    <div>
+                        <h3 id="mudraName">Pataka (Flag Gesture)</h3>
+                        <span id="mudraType" class="badge-type">Asamyuta Hasta</span>
+                    </div>
+                </div>
+
+                <div class="explanation-blocks">
+                    <div class="info-block">
+                        <div class="info-icon"><i class="fa-solid fa-book"></i></div>
+                        <div class="info-content">
+                            <p id="mudraMeaning">Meaning appears here...</p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="info-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                        <div class="info-content">
+                            <p id="mudraUsage">Dramatic dance usage (Viniyoga) appears here...</p>
+                        </div>
+                    </div>
+
+                    <div class="info-block">
+                        <div class="info-icon"><i class="fa-solid fa-hand-point-right"></i></div>
+                        <div class="info-content">
+                            <p id="mudraFormation">Hand formation steps appear here...</p>
+                        </div>
+                    </div>
+
+                    <div class="info-block shloka-block">
+                        <div class="info-icon"><i class="fa-solid fa-scroll"></i></div>
+                        <div class="info-content">
+                            <p id="mudraShloka">Classical shloka appears here...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Toolbar: Audio Speech Narration & Copy -->
+                <div class="result-actions-bar">
+                    <button id="audioNarrateBtn" class="btn btn-audio" type="button">
+                        <i class="fa-solid fa-volume-high"></i> Listen in English
+                    </button>
+                    <button id="copyResultBtn" class="btn btn-copy" type="button">
+                        <i class="fa-solid fa-copy"></i> Copy Explanation
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Similar / Runner-up Mudras -->
+        <div id="alternativesContainer" class="alternatives-box"></div>
+    </div>
+</section>
+
+<!-- ================= MUDRA LIBRARY / CATALOG ================= -->
+<section class="catalog-section" id="catalog">
+    <div class="section-heading">
+        <span class="section-tag"><i class="fa-solid fa-book-bookmark"></i> Classical Repertory</span>
+        <h2>Explore Full Mudra Library</h2>
+        <p>Browse through Asamyuta (Single Hand) and Samyuta (Combined Hand) Hastas. Click any card to inspect and explain.</p>
+    </div>
+
+    <div class="catalog-controls">
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="catalogSearch" placeholder="Search mudra by name, Sanskrit, or meaning...">
+        </div>
+        <div class="filter-box">
+            <select id="catalogCategoryFilter">
+                <option value="all">All Categories (Single & Double)</option>
+                <option value="asamyuta">Asamyuta Hastas (Single Hand)</option>
+                <option value="samyuta">Samyuta Hastas (Double Hand)</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="catalogGrid" class="catalog-grid">
+        <!-- Mudra cards dynamically populated by app.js -->
+    </div>
+</section>
+
+<!-- ================= ABOUT ABHINAYA DARPANA ================= -->
+<section class="about-section" id="about">
+    <div class="section-heading">
+        <span class="section-tag"><i class="fa-solid fa-dharmachakra"></i> Heritage & Philosophy</span>
+        <h2>About Bharatanatyam Hastas & NLP</h2>
+        <p>Bridging 2000-year-old Natya Shastra traditions with modern Natural Language Processing.</p>
+    </div>
+
+    <div class="about-grid">
+        <div class="about-card">
+            <div class="about-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+            <h3>Abhinaya Darpana</h3>
+            <p>
+                Compiled by Acharya Nandikeshavara, the <em>Abhinaya Darpana</em> defines 28 Asamyuta Hastas (single hand gestures) 
+                and 24 Samyuta Hastas (double hand gestures), each with strict rules of formation and codified dramatic usages (Viniyogas).
+            </p>
+        </div>
+
+        <div class="about-card">
+            <div class="about-icon"><i class="fa-solid fa-language"></i></div>
+            <h3>Multilingual NLP Engine</h3>
+            <p>
+                The classification engine parses descriptive queries across 6 languages. 
+                Using multilingual tokenization, phonetic matching, and synonym weighting, it accurately predicts the intended classical gesture.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <div class="about-icon"><i class="fa-solid fa-ear-listen"></i></div>
+            <h3>Interactive Speech AI</h3>
+            <p>
+                Equipped with Web Speech Recognition (STT) for hands-free voice input in regional Indian accents, and Text-to-Speech (TTS) narration 
+                to vocalize the Sanskrit shlokas and vernacular explanations aloud.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= SUPPORTED LANGUAGES SECTION ================= -->
+<section class="languages-section" id="languages">
+    <div class="section-heading">
+        <span class="section-tag"><i class="fa-solid fa-earth-asia"></i> Linguistic Diversity</span>
+        <h2>Supported Indian Languages</h2>
+        <p>Preserving Indian classical arts across major regional and national languages.</p>
+    </div>
+
+    <div class="languages-grid">
+        <div class="lang-card">
+            <span class="lang-symbol">EN</span>
+            <h4>English</h4>
+            <p>Full anatomical finger descriptions, poetic translations & dance usage notes.</p>
+        </div>
+        <div class="lang-card">
+            <span class="lang-symbol">ಕ</span>
+            <h4>ಕನ್ನಡ (Kannada)</h4>
+            <p>ಸಂಪೂರ್ಣ ವಿವರಣೆ, ಬೆರಳುಗಳ ಭಂಗಿ ಮತ್ತು ನಾಟ್ಯ ವಿನಿಯೋಗ ಶಾಸ್ತ್ರೀಯ ಕನ್ನಡದಲ್ಲಿ.</p>
+        </div>
+        <div class="lang-card">
+            <span class="lang-symbol">த</span>
+            <h4>தமிழ் (Tamil)</h4>
+            <p>பரதநாட்டியத்தின் மூல மரபான தமிழ் மொழியில் முத்திரை விளக்கம் மற்றும் பயன்பாடு.</p>
+        </div>
+        <div class="lang-card">
+            <span class="lang-symbol">తె</span>
+            <h4>తెలుగు (Telugu)</h4>
+            <p>శాస్త్రీయ నాట్య సంప్రదాయంలో తెలుగు వివరణలు మరియు హస్త ముద్ర విధానం.</p>
+        </div>
+        <div class="lang-card">
+            <span class="lang-symbol">മ</span>
+            <h4>മലയാളം (Malayalam)</h4>
+            <p>മുദ്രകളുടെ ശാസ്ത്രീയ അർത്ഥവും കൈപ്പത്തി വിന്യാസവും മലയാളത്തിൽ.</p>
+        </div>
+        <div class="lang-card">
+            <span class="lang-symbol">अ</span>
+            <h4>हिन्दी (Hindi)</h4>
+            <p>अभिनय दर्पण के श्लोकों का सरल हिन्दी भावार्थ एवं नाट्य विनियोग विवरण।</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-brand">
+            <span class="logo-lotus">🪷</span> MudraNLP System
+        </div>
+        <p>
+            Dedicated to Indian Classical Dance Heritage &amp; Natya Shastra.
+            Supported Languages: English • ಕನ್ನಡ • தமிழ் • తెలుగు • മലയാളം • हिन्दी.
+        </p>
+        <p class="copyright">
+            © 2026 Mudra NLP | AI &amp; DS Final Year Project
+        </p>
+    </div>
+</footer>
+
+<!-- JavaScript Application Logic -->
+<script src="app.js"></script>
+</body>
+</html>
